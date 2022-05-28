@@ -30,15 +30,6 @@ body{
     padding-top: 5px;
 }
 
-h1{
-    font-family:"Open Sans Condensed", sans-serif;
-    font-size:3rem;
-}
-
-h1.titulo{
-    display:inline;
-}
-
 #mi_boton_ingresar{
     border:solid #ffffff 1px;
     font-family:'Abel', sans-serif;
