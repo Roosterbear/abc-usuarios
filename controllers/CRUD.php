@@ -2,7 +2,7 @@
 
 class CRUD{
     public function view(){
-        include "views/template.php";
-       
+        include "views/header.php";
+        include "views/crudVw.php";
     }
 }

@@ -1,6 +1,6 @@
 <footer>
       <nav>
-        Derechos reservados 🥑​
+        &copy Derechos reservados 🥑​
       </nav>
    </footer>
 </body>
