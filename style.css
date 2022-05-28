@@ -1,0 +1,139 @@
+/* ------------------------ */
+/* ------- CLEANNER ------- */
+/* ------------------------ */
+*{
+    margin:0;
+    padding:0;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Open Sans Condensed", sans-serif;
+    font-size:1.5rem;
+    font-weight:700;
+    line-height:2;
+    color:#eeeeee;
+}
+
+.breathe{
+    margin: 1rem 0;
+}
+
+.img-logo-nasa{
+    padding: 5px;
+}
+
+.contenedor{
+    margin:0 auto;
+    width:99%;
+    padding-top: 5px;
+}
+
+h1{
+    font-family:"Open Sans Condensed", sans-serif;
+    font-size:3rem;
+}
+
+h1.titulo{
+    display:inline;
+}
+
+#mi_boton_ingresar{
+    border:solid #ffffff 1px;
+    font-family:'Abel', sans-serif;
+    font-size:1.5rem;
+    padding:0px 50px;
+    margin:7px;
+    background-color:rgba(255, 255, 255, 0);
+    color:#ffffff;
+    display:block;
+    float:right;
+    cursor:pointer;
+}
+
+#mi_boton_ingresar>a{
+    color:#fa5300;
+    text-decoration:none;
+}
+
+#mi_boton_ingresar:hover{
+    text-decoration:none;
+    background-color:rgba(255, 255, 255, 0.1);
+}
+
+
+/* ------------------------ */
+/* ------- FOOTER --------- */
+/* ------------------------ */
+footer{
+    background-color:rgba(69, 69, 69, 0.8);
+    color:#ffffff;
+    font-size:1.2rem;
+    font-weight:300;
+    letter-spacing:.05em;
+    padding:0 15px;
+    position:fixed;
+    width:100%;bottom:0
+}
+
+footer nav{
+    text-align: center;
+}
+
+
+/* ------------------------ */
+/* ------ MOBILE FIRST ---- */
+/* ------------------------ */
+.fondo{
+    /* Para ajuste perfecto */
+    height:100vh;
+    
+    /* Fondo con gradiente */
+    background:-webkit-gradient(
+        linear, left top, right top, 
+        from(rgba(68, 68, 68, 0.842)), 
+        to(rgba(158, 76, 44, 0.767))), 
+        url(img/02_el_respaldo_del_profesionalismo--800.jpg);
+        background:-webkit-linear-gradient(
+        left, rgba(68, 68, 68, 0.842), rgba(158, 76, 44, 0.767)), 
+        url(img/02_el_respaldo_del_profesionalismo--800.jpg);
+        background:-o-linear-gradient(
+            left, rgba(68, 68, 68, 0.842), rgba(158, 76, 44, 0.767)), 
+            url(img/02_el_respaldo_del_profesionalismo--800.jpg);
+            background:linear-gradient(
+                to right, rgba(68, 68, 68, 0.842), rgba(158, 76, 44, 0.767)), 
+                url(img/02_el_respaldo_del_profesionalismo--800.jpg);
+                background-size:cover;
+                background-position:top right;
+}
+            
+.caja_login{
+    position:absolute;
+    top:20%;left:10%;
+}
+            
+/* -------------------------------------- */
+/* ------- PC Media Queries ------------- */
+/* -------------------------------------- */
+@media (min-width:800px){
+    .fondo{
+        background:-webkit-gradient(
+            linear, left top, right top, 
+            from(rgba(68, 68, 68, 0.842)), 
+            to(rgba(158, 76, 44, 0.767))), 
+            url(img/01_todo_para_poner_tu_negocio_en_la_red--2000.jpg);
+        background:-webkit-linear-gradient(
+            left, rgba(68, 68, 68, 0.842), rgba(158, 76, 44, 0.767)), 
+            url(img/01_todo_para_poner_tu_negocio_en_la_red--2000.jpg);
+        background:-o-linear-gradient(
+            left, rgba(68, 68, 68, 0.842), rgba(158, 76, 44, 0.767)), 
+            url(img/01_todo_para_poner_tu_negocio_en_la_red--2000.jpg);
+        background:linear-gradient(
+            to right, rgba(68, 68, 68, 0.842), rgba(158, 76, 44, 0.767)), 
+            url(img/01_todo_para_poner_tu_negocio_en_la_red--2000.jpg);
+    }
+    .caja_login{
+        left:20%
+    }
+}
