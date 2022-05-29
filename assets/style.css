@@ -16,9 +16,21 @@ body{
     line-height:0.7;
 }
 
+.bienvenido{
+    margin-right: 10px;
+    text-align: right;
+}
+
 .titulo_usuarios{
-    display: inline-block;
     color:#fa5300;
+    margin-left: 5px;
+    font-size: 1.7rem;
+    line-height: 2rem;
+}
+
+.titulo_usuarios:hover{
+    color:#fa0000;
+    cursor: pointer;
 }
 
 #agregar_usuario{    
@@ -47,6 +59,14 @@ body{
     color: #888;
 }
 
+.black{
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
 .img-logo-nasa{
     padding: 5px;
 }
@@ -61,7 +81,7 @@ body{
     padding-top: 5px;
 }
 
-#mi_boton_ingresar{
+#boton_login{
     border:solid #ffffff 1px;
     font-family:'Abel', sans-serif;
     font-size:1.5rem;
@@ -74,16 +94,37 @@ body{
     cursor:pointer;
 }
 
-#mi_boton_ingresar>a{
+#boton_login>a{
     color:#fa5300;
     text-decoration:none;
 }
 
-#mi_boton_ingresar:hover{
+#boton_login:hover{
     text-decoration:none;
     background-color:rgba(255, 255, 255, 0.1);
 }
 
+#boton_editar_usuario,
+#boton_agregar_usuario{
+    border:solid #fa5300 1px;
+    font-family:'Abel', sans-serif;
+    font-size:1.5rem;
+    padding:0px 50px;
+    margin:10px;
+    background-color:rgba(255, 255, 255, 0.1);
+    color:#fa5300;
+    display:block;    
+    cursor:pointer;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#boton_editar_usuario:hover,
+#boton_agregar_usuario:hover{
+    text-decoration:none;
+    background-color:#fa5300;
+    color: #fff;
+}
 
 /* ------------------------ */
 /* ------- FOOTER --------- */

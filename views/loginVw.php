@@ -11,7 +11,7 @@
       <!-- -------------------------- -->
       <div class="caja_login">
         <form action="usuarios" method="post">
-          <label for="usuario"><i class="fa fa-users"></i>Usuario: </label>
+          <label for="usuario">Usuario: </label>
           <input type="text" id="usuario" name="usuario" class="form-control">
           <div class="breathe"></div>
           <label for="password">Contraseña: </label>
@@ -20,7 +20,7 @@
           
           <div class="breathe"></div>
           
-            <button type="submit" id="mi_boton_ingresar">
+            <button type="submit" id="boton_login">
               Ingresar
             </button>
           
