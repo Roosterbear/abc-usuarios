@@ -1,8 +1,11 @@
 <?php
+session_start();
 
-class CRUD{
+
+class Usuarios{
     public function view(){
         include "views/header.php";
-        include "views/crudVw.php";
+        include "views/usuariosVw.php";
     }
 }
+

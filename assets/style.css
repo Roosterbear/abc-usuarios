@@ -9,11 +9,15 @@
 }
 
 body{
+    color: #222;
     font-family:"Open Sans Condensed", sans-serif;
     font-size:1.5rem;
     font-weight:700;
     line-height:2;
-    color:#eeeeee;
+}
+
+h1{
+    color:#fa5300;
 }
 
 .breathe{
@@ -22,6 +26,10 @@ body{
 
 .img-logo-nasa{
     padding: 5px;
+}
+
+.caja_login{
+    color:#eeeeee;
 }
 
 .contenedor{
@@ -85,16 +93,16 @@ footer nav{
         linear, left top, right top, 
         from(rgba(68, 68, 68, 0.842)), 
         to(rgba(158, 76, 44, 0.767))), 
-        url(img/02_el_respaldo_del_profesionalismo--800.jpg);
+        url(../img/02_el_respaldo_del_profesionalismo--800.jpg);
         background:-webkit-linear-gradient(
         left, rgba(68, 68, 68, 0.842), rgba(158, 76, 44, 0.767)), 
-        url(img/02_el_respaldo_del_profesionalismo--800.jpg);
+        url(../img/02_el_respaldo_del_profesionalismo--800.jpg);
         background:-o-linear-gradient(
             left, rgba(68, 68, 68, 0.842), rgba(158, 76, 44, 0.767)), 
-            url(img/02_el_respaldo_del_profesionalismo--800.jpg);
+            url(../img/02_el_respaldo_del_profesionalismo--800.jpg);
             background:linear-gradient(
                 to right, rgba(68, 68, 68, 0.842), rgba(158, 76, 44, 0.767)), 
-                url(img/02_el_respaldo_del_profesionalismo--800.jpg);
+                url(../img/02_el_respaldo_del_profesionalismo--800.jpg);
                 background-size:cover;
                 background-position:top right;
 }
@@ -113,16 +121,16 @@ footer nav{
             linear, left top, right top, 
             from(rgba(68, 68, 68, 0.842)), 
             to(rgba(158, 76, 44, 0.767))), 
-            url(img/01_todo_para_poner_tu_negocio_en_la_red--2000.jpg);
+            url(../img/01_todo_para_poner_tu_negocio_en_la_red--2000.jpg);
         background:-webkit-linear-gradient(
             left, rgba(68, 68, 68, 0.842), rgba(158, 76, 44, 0.767)), 
-            url(img/01_todo_para_poner_tu_negocio_en_la_red--2000.jpg);
+            url(../img/01_todo_para_poner_tu_negocio_en_la_red--2000.jpg);
         background:-o-linear-gradient(
             left, rgba(68, 68, 68, 0.842), rgba(158, 76, 44, 0.767)), 
-            url(img/01_todo_para_poner_tu_negocio_en_la_red--2000.jpg);
+            url(../img/01_todo_para_poner_tu_negocio_en_la_red--2000.jpg);
         background:linear-gradient(
             to right, rgba(68, 68, 68, 0.842), rgba(158, 76, 44, 0.767)), 
-            url(img/01_todo_para_poner_tu_negocio_en_la_red--2000.jpg);
+            url(../img/01_todo_para_poner_tu_negocio_en_la_red--2000.jpg);
     }
     .caja_login{
         left:20%

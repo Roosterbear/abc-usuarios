@@ -7,3 +7,6 @@ class Login{
         include "views/footer.php";
     }
 }
+
+
+

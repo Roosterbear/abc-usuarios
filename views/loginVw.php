@@ -10,20 +10,21 @@
       <!-- ---- Login usuario ------- -->
       <!-- -------------------------- -->
       <div class="caja_login">
-        
-        <label for="nombre">Usuario: </label>
-        <input type="text" id="nombre" class="form-control">
-        <div class="breathe"></div>
-        <label for="password">Contraseña: </label>
-        <div class="breathe"></div>
-        <input type="password" id="password" class="form-control">
-        
-        <div class="breathe"></div>
-        <a href="#">
-          <button id="mi_boton_ingresar">
-            Ingresar
-          </button>
-        </a>
+        <form action="verificar" method="post">
+          <label for="usuario"><i class="fa fa-users"></i>Usuario: </label>
+          <input type="text" id="usuario" name="usuario" class="form-control">
+          <div class="breathe"></div>
+          <label for="password">Contraseña: </label>
+          <div class="breathe"></div>
+          <input type="password" id="password" name="password" class="form-control">
+          
+          <div class="breathe"></div>
+          
+            <button type="submit" id="mi_boton_ingresar">
+              Ingresar
+            </button>
+          
+        </form>
       </div>
 
   </header>
