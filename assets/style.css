@@ -24,6 +24,23 @@ h1{
     margin: 1rem 0;
 }
 
+.editar, .eliminar{
+    cursor: pointer;
+    text-align: center;
+}
+
+.editar{
+    color: #1db954;
+}
+
+.eliminar{
+    color: #ff6347;
+}
+
+.gris{
+    color: #888;
+}
+
 .img-logo-nasa{
     padding: 5px;
 }

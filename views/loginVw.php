@@ -10,7 +10,7 @@
       <!-- ---- Login usuario ------- -->
       <!-- -------------------------- -->
       <div class="caja_login">
-        <form action="verificar" method="post">
+        <form action="usuarios" method="post">
           <label for="usuario"><i class="fa fa-users"></i>Usuario: </label>
           <input type="text" id="usuario" name="usuario" class="form-control">
           <div class="breathe"></div>

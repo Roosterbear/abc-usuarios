@@ -1,12 +1,11 @@
 <?php
-//session_start();
+
 require_once "models/Usuario.php";
 
-//$login_usuario = Usuario::getUsuario();
-//$login_usuario['usuario'];
+$usuarios = Usuario::getUsuarios();
 
 if(isset($_GET['route'])){
-    if($_GET['route'] = 'verificar'){
+    if($_GET['route'] = 'usuarios'){
         $usuario = '';
         $password = '';
 
@@ -14,8 +13,10 @@ if(isset($_GET['route'])){
             $usuario = isset($_POST['usuario'])?$_POST['usuario']:'';
             $password = isset($_POST['password'])?$_POST['password']:'';
 
-            // TODO _____Comprobar usuario
-            $logged = ($usuario==='admin')&&($password='admin')?true:false;
+            foreach($usuarios as $u){
+                $logged = ($usuario===$u['usuario'])&&($password===$u['password'])?true:false;
+                if($logged) break;
+            }
         }
     }else{
         $logged = false;
@@ -24,8 +25,8 @@ if(isset($_GET['route'])){
 
 if ($logged){
     require_once "controllers/Usuarios.php";
-    $usuario = new Usuarios();
-    $usuario->view();
+    $usuarios = new Usuarios();
+    $usuarios->view();
 }else{
     require_once "controllers/Login.php";
     $login = new Login();
