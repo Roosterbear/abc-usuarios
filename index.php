@@ -1,11 +1,11 @@
 <?php
-
+session_start();
 require_once "models/Usuario.php";
 
 $usuarios = Usuario::getUsuarios();
 
 if(isset($_GET['route'])){
-    if($_GET['route'] = 'usuarios'){
+    if($_GET['route'] === 'usuarios'){
         $usuario = '';
         $password = '';
 
@@ -25,6 +25,7 @@ if(isset($_GET['route'])){
 
 if ($logged){
     require_once "controllers/Usuarios.php";
+    $_SESSION['usuario'] = $usuario;
     $usuarios = new Usuarios();
     $usuarios->view();
 }else{

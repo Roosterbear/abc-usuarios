@@ -15,7 +15,11 @@
     <!-- Fontawesome -->
     <script src="https://use.fontawesome.com/8c3bbd99b9.js"></script>
 
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <!-- Estilos -->
     <link rel="stylesheet" href="assets/style.css">
+    
     <title>ABC usuarios NASA tecnologia</title>
 </head>
