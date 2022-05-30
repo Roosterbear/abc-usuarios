@@ -19,43 +19,7 @@
 
     <div class="mensaje"></div>
 
-    <table class="table table-stripped table-bordered table-condensed">
-        <tr>
-            <th></th>
-            <th>Nombre</th>
-            <th>Usuario</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
-        </tr>
-
-<?php
-$usuarios = Usuario::getUsuarios();
-$contador = 0;
-
-/* -------------------------------------------- */
-/* LLENADO DE TABLA CON INFORMACION DE USUARIOS */
-/* -------------------------------------------- */
-
-foreach($usuarios as $u){
-    // Mostrar
-    echo '<tr id="row-usuario-'.$u['id'].'">';
-    echo '<td>'.++$contador.'</td>';
-    echo '<td class="gris">'.$u['nombre'].'</td>';
-    echo '<td class="gris">'.$u['usuario'].'</td>';
-    
-    // Editar
-    echo '<td class="icono_link action" id="a-'.$u['id'].'">';
-    echo '<span data-bs-toggle="modal" data-bs-target="#modal_editar">';
-    echo '<i class="fa fa-lg fa-pencil editar"></i></span></td>';
-  
-    // Eliminar
-    echo '<td class="icono_link action" id="e-'.$u['id'].'">';
-    echo '<i class="fa fa-lg fa-trash eliminar"></i></td>';
-    echo '</tr>';
-}
-?>
-</table>
-
+    <div class="tabla"></div>
 
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@ MODALES @@@@@@@@@@@@@@@@@@@@@@@@@ -->
@@ -152,6 +116,7 @@ foreach($usuarios as $u){
 <script type="text/javascript">
 var this_id = 0;
 $(document).ready(function(){
+  llenarTabla();
   $('.action').click(function(){
     var id_label = this.id;
     var variables = id_label.split("-");
@@ -203,4 +168,11 @@ function enviarMensaje(data){
     $('.mensaje').html('');
   }, 2000);
 }
+
+function llenarTabla(){
+  $.post('models/mostrar.php',function(data){
+    $('.tabla').html(data);    
+  });
+}
+
 </script>
