@@ -12,11 +12,11 @@ class Editar{
         $sql .= "' where id = ";
         $sql .= $id;
         
-        //$res = Conexion::conectar()->prepare($sql);
-        //$res->execute();
+        $res = Conexion::conectar()->prepare($sql);
+        $res->execute();
 
-        //echo 'Usuario actualizado satisfactoriamente!';
-        echo 'Hola';
+        echo 'Usuario actualizado satisfactoriamente!';
+        
         
     }
 }

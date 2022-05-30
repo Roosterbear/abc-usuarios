@@ -185,7 +185,7 @@ $(document).ready(function(){
     var nombre = $('#nombre_editar').val();    
     var password = $('#password_editar').val();
     $.post('models/editar.php',{id:id, nombre:nombre, password:password},function(data){
-      enviarMensaje(data);      
+      alert(data);      
     });
   });
 
