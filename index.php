@@ -2,6 +2,7 @@
 session_start();
 require_once "models/Usuario.php";
 
+// Usuarios para checar el Login
 $usuarios = Usuario::getUsuarios();
 
 if(isset($_GET['route'])){
@@ -25,20 +26,17 @@ if(isset($_GET['route'])){
     }
 }
 
-if($_GET['route'] === 'Agregar'){
-    require_once "models/agregar.php";
+if ($logged){
+    require_once "controllers/Usuarios.php";
+    $_SESSION['usuario'] = $nombre;
+    $usuarios = new Usuarios();
+    $usuarios->view();
 }else{
-    if ($logged){
-        require_once "controllers/Usuarios.php";
-        $_SESSION['usuario'] = $nombre;
-        $usuarios = new Usuarios();
-        $usuarios->view();
-    }else{
-        require_once "controllers/Login.php";
-        $login = new Login();
-        $login->view();
-    }
+    require_once "controllers/Login.php";
+    $login = new Login();
+    $login->view();
 }
+
 
 
 
