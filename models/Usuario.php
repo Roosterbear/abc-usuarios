@@ -19,8 +19,4 @@ class Usuario{
         return $res->fetch();
         
     }
-
-
-    
-   
 }

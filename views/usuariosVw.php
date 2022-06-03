@@ -1,9 +1,7 @@
 <body>
     <div class="contenedor">
       <!------- LOGO ------->
-      <div class="black">
-        <img src="img/logo.png" alt="NASA Tecnologia" width="157" height="50" class="img-logo-nasa">
-      </div>
+      <img src="img/logo.png" alt="DHL Demo" width="200" height="112" class="img-logo-dhl">
       <div class="breathe"></div>
 
       <h5 class="bienvenido"><strong><?php echo $_SESSION['usuario']?> |</strong> 
@@ -114,47 +112,67 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-var this_id = 0;
-$(document).ready(function(){
+  var this_id = '';
+  var id_label = '';
+  var variables = '';
+  var this_action = '';
+
+
+  function enviarMensaje(data){
+    $('.mensaje').html(data);
+    setTimeout(() => {
+      $('.mensaje').html('');
+    }, 2000);
+  }
+
+  function llenarTabla(){
+    $.post('models/mostrar.php',function(data){
+      $('.tabla').html(data);    
+    });
+  }
+
+  $(document).ready(function(){
+  
   llenarTabla();
-  $('.action').click(function(){
-    var id_label = this.id;
-    var variables = id_label.split("-");
+  
+  $(document).on('click','.action',function(){
+    id_label = this.id;    
+    variables = id_label.split("-");
     this_id = variables[1];
-    var this_action = variables[0];
+    this_action = variables[0];
     
     if (this_action === 'e'){
       var id = this_id;
       // Eliminar la fila
       $.post('models/eliminar.php',{id:id},function(data){
-        //enviarMensaje(data);      
+        $('#row-usuario-'+this_id).fadeOut();
       });
-      $('#row-usuario-'+this_id).fadeOut();
 
       }else{
         $('#label_id').html(this_id);
       }
   });
 
-  $('#boton_agregar_usuario').click(function(){
+  $(document).on('click','#boton_agregar_usuario',function(){
     var nombre = $('#nombre_agregar').val();
     var usuario = $('#usuario_agregar').val();
     var password = $('#usuario_agregar').val();
     $.post('models/agregar.php',{nombre:nombre, usuario:usuario, password:password},function(data){
       enviarMensaje(data);      
     });
+    llenarTabla();
   });
 
-  $('#boton_editar_usuario').click(function(){
+  $(document).on('click','#boton_editar_usuario',function(){
     var id = this_id;
     var nombre = $('#nombre_editar').val();    
     var password = $('#password_editar').val();
     $.post('models/editar.php',{id:id, nombre:nombre, password:password},function(data){
-      alert(data);      
+      llenarTabla();     
     });
   });
 
-  $('#salir').click(function(){
+  $(document).on('click','#salir',function(){
     $.post('models/salir.php',function(data){
       
     });
@@ -162,17 +180,5 @@ $(document).ready(function(){
   
 });
 
-function enviarMensaje(data){
-  $('.mensaje').html(data);
-  setTimeout(() => {
-    $('.mensaje').html('');
-  }, 2000);
-}
-
-function llenarTabla(){
-  $.post('models/mostrar.php',function(data){
-    $('.tabla').html(data);    
-  });
-}
 
 </script>
