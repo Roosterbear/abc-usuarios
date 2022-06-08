@@ -112,23 +112,28 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
+
+  $(document).ready(function(){
+    $('#usuario_agregar').val('');
+    $('#password_agregar').val('');
+  })
+
   var this_id = '';
   var id_label = '';
   var variables = '';
   var this_action = '';
 
-
-  function enviarMensaje(data){
-    $('.mensaje').html(data);
-    setTimeout(() => {
-      $('.mensaje').html('');
-    }, 2000);
-  }
-
   function llenarTabla(){
     $.post('models/mostrar.php',function(data){
       $('.tabla').html(data);    
     });
+  }
+
+  function salir(){
+    $('body').html('<h2>Sesion terminada</h2>');
+    setTimeout(()=>{
+      window.location.href = "http://localhost:8080";
+    },500)
   }
 
   $(document).ready(function(){
@@ -150,6 +155,10 @@
 
       }else{
         $('#label_id').html(this_id);
+        $.post('models/getUsuario.php',{id:id},function(data){
+          $('#nombre_editar').val('Ponle un nombre')
+          $('#password_editar').val('123')
+        });
       }
   });
 
@@ -157,10 +166,9 @@
     var nombre = $('#nombre_agregar').val();
     var usuario = $('#usuario_agregar').val();
     var password = $('#usuario_agregar').val();
-    $.post('models/agregar.php',{nombre:nombre, usuario:usuario, password:password},function(data){
-      enviarMensaje(data);      
+    $.post('models/agregar.php',{nombre:nombre, usuario:usuario, password:password},function(){
+      llenarTabla();     
     });
-    llenarTabla();
   });
 
   $(document).on('click','#boton_editar_usuario',function(){
@@ -174,7 +182,7 @@
 
   $(document).on('click','#salir',function(){
     $.post('models/salir.php',function(data){
-      
+      salir();  
     });
   });
   

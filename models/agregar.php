@@ -16,7 +16,7 @@ class Agregar{
         $res = Conexion::conectar()->prepare($sql);
         $res->execute();
 
-        echo 'Usuario '.$usuario.' agregado satisfactoriamente!';
+       return true;
         
     }
 }

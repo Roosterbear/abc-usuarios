@@ -91,6 +91,10 @@ body{
     background-color:rgba(255, 255, 255, 0.1);
 }
 
+#salir{
+    cursor: pointer;
+}
+
 #boton_editar_usuario,
 #boton_agregar_usuario{
     border:solid #fa5300 1px;
