@@ -145,9 +145,9 @@
     variables = id_label.split("-");
     this_id = variables[1];
     this_action = variables[0];
+    var id = this_id;
     
     if (this_action === 'e'){
-      var id = this_id;
       // Eliminar la fila
       $.post('models/eliminar.php',{id:id},function(data){
         $('#row-usuario-'+this_id).fadeOut();
@@ -155,9 +155,8 @@
 
       }else{
         $('#label_id').html(this_id);
-        $.post('models/getUsuario.php',{id:id},function(data){
-          $('#nombre_editar').val('Ponle un nombre')
-          $('#password_editar').val('123')
+        $.post('models/nombre.php',{id:id},function(data){
+          $('#nombre_editar').val(data);
         });
       }
   });
