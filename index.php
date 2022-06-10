@@ -14,6 +14,7 @@ if(isset($_GET['route'])){
         if($_POST){
             $usuario = isset($_POST['usuario'])?$_POST['usuario']:'';
             $password = isset($_POST['password'])?$_POST['password']:'';
+            $password = crypt($password, '$2a$07$Gu4c4m0l3C4n4d45i5t3m45$');
 
             foreach($usuarios as $u){
                 $logged = ($usuario===$u['usuario'])&&($password===$u['password'])?true:false;

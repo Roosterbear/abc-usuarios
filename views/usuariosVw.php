@@ -15,8 +15,6 @@
     </div>
     <div class="breathe"></div>
 
-    <div class="mensaje"></div>
-
     <div class="tabla"></div>
 
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
@@ -113,7 +111,7 @@
 
 <script type="text/javascript">
 
-  $(document).ready(function(){
+  $('.titulo_usuarios').on('click', function(){
     $('#usuario_agregar').val('');
     $('#password_agregar').val('');
   })

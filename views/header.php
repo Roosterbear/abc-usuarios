@@ -12,5 +12,5 @@
     <script src="https://use.fontawesome.com/8c3bbd99b9.js"></script>
     <link rel="stylesheet" href="assets/style.css">
     
-    <title>ABC usuarios NASA tecnologia</title>
+    <title>ABC usuarios</title>
 </head>
