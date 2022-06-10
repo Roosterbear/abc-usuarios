@@ -153,8 +153,15 @@
 
       }else{
         $('#label_id').html(this_id);
+        
+        // Obtener nombre
         $.post('models/nombre.php',{id:id},function(data){
           $('#nombre_editar').val(data);
+        });
+
+        // Obtener usuario
+        $.post('models/user.php',{id:id},function(data){
+          $('#usuario_editar').val(data);
         });
       }
   });
